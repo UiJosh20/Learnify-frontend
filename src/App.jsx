@@ -1,7 +1,9 @@
 import { Route, Routes } from "react-router-dom"
-import Signup from "./Components/Signup"
-import Login from "./Components/Login"
+import UserSignup from "./Components/UserSignup"
 import Forgot from "./Components/Forgot"
+import UserLogin from "./Components/UserLogin"
+import AdminSignup from "./Components/AdminSignup"
+import AdminLogin from "./Components/AdminLogin"
 
 
 function App() {
@@ -10,8 +12,10 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/user/login" element={<UserLogin />} />
+        <Route path="/user/signup" element={<UserSignup />} />
+        <Route path="/admin/signup" element={<AdminSignup />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/forgot" element={<Forgot/>}/>
       </Routes>
     </>

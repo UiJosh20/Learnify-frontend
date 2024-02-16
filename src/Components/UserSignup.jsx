@@ -1,12 +1,12 @@
 import axios from "axios"
 import { useFormik } from "formik"
 import { Link, useNavigate } from "react-router-dom"
-import {loginSchema} from "./userSchema"
+import {loginSchema} from "./Schema/userSchema"
 
 
-const Signup = () => {
+const UserSignup = () => {
     const navigate = useNavigate()
-    const URL = "http://localhost:3000/register"
+    const URL = "http://localhost:3000/user/register"
     const { handleChange, handleSubmit, values, errors } = useFormik({
         initialValues:{
             firstName: "",
@@ -37,4 +37,4 @@ const Signup = () => {
     )
 }
 
-export default Signup
+export default UserSignup
