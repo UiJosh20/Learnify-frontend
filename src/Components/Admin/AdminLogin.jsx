@@ -34,7 +34,7 @@ const AdminLogin = () => {
                     </div>
                     <Link to='/forgot'>Forgot password</Link>
                 </div>
-                <button type="submit" className="bg-grey-300 p-3 text-white rounded w-full mb-3 font-bold">login</button>
+                <button type="submit" className="bg-black p-3 text-white rounded w-full mb-3 font-bold">login</button>
                 <p className="text-center">Don't have an account? <Link to='/signup' className="text-gray-500 font-bold">Sign up</Link></p>
             </form>
         </section>

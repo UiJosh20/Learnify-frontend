@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+button{
+  font-size: 12px !important;
+  font-weight: bold !important;
+}
+h1{
+  font-size: 52px !important;
+  padding:0px 50px 0px 0px ;
+  width: 600px;
+}

@@ -6,6 +6,7 @@ import AdminSignup from "./Components/Admin/AdminSignup"
 import AdminLogin from "./Components/Admin/AdminLogin"
 import Home from "./Components/Layout/Home"
 import Layout from "./Components/Layout/Layout"
+import NotFound from "./Components/Layout/NotFound"
 
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
         <Route path="/" element={<Layout/>}>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home/>} />
+        <Route path="*" element={<NotFound/>}/>
+
         </Route>
         
         <Route path="/user/login" element={<UserLogin/>} />
