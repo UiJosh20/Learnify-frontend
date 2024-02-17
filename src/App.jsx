@@ -5,6 +5,7 @@ import UserLogin from "./Components/Users/UserLogin"
 import AdminSignup from "./Components/Admin/AdminSignup"
 import AdminLogin from "./Components/Admin/AdminLogin"
 import Home from "./Components/Layout/Home"
+import Layout from "./Components/Layout/Layout"
 
 
 function App() {
@@ -13,14 +14,17 @@ function App() {
   return (
     <>
       <Routes>
+        <Route path="/" element={<Layout/>}>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Home/>} />
+        </Route>
+        
         <Route path="/user/login" element={<UserLogin/>} />
         <Route path="/user/signup" element={<UserSignup />} />
         <Route path="/admin/signup" element={<AdminSignup />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/forgot" element={<Forgot/>}/>
-        <Route path="/" element={<Navigate to='/home' />}>
-          <Route path="/home" element={<Home/>} />
-        </Route>
+        
       </Routes>
     </>
   )
