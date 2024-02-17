@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useFormik } from "formik"
 import { Link, useNavigate } from "react-router-dom"
-import { loginSchema } from "./Schema/userSchema"
+import { loginSchema } from "../Schema/userSchema"
 
 
 const AdminLogin = () => {
