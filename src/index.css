@@ -2,13 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  font-family: 'Rubik', sans-serif;
+}
 
-button{
+h1{
+  font-size: 42px !important;
+  width: 600px;
+  font-family: 'REM', sans-serif;
+
+}
+.logo{
+  font-family: 'Major Birch', sans-serif;
+  color:goldenrod;
+  font-size: 30px;
+}
+
+.nav-button {
   font-size: 12px !important;
   font-weight: bold !important;
+  color: white !important;
+  font-family: 'Rubik', sans-serif !important;
+  border-radius: 0% !important;
 }
-h1{
-  font-size: 52px !important;
-  padding:0px 50px 0px 0px ;
-  width: 600px;
+
+.nav-button.active {
+  border-bottom: 2px solid goldenrod;
+}
+.wedit{
+  width:650px;
 }

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -14,26 +14,28 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
+  const location = useLocation();
+
   return (
     <>
-      <nav className="bg-slate-950 text-white flex justify-between lg:px-10 lg:py-7 fixed top-0 w-full z-50">
+      <nav className="bg-slate-950 text-white flex justify-between items-center lg:px-20 lg:py-7 fixed top-0 w-full z-50">
         <div>
-        <Link to='/home'>
-          <p>Learnify</p>
-            </Link>
+          <Link to="/home">
+            <p className="logo">Learnify</p>
+          </Link>
         </div>
-        <div className="flex lg:gap-7">
-        <Button
-            id="fade-button"
-            className="!bg-slate-950 !text-white"
+        <div className="flex lg:gap-5 lg:me-5">
+          <Button
+            id="home-button"
+            className={`nav-button ${location.pathname === '/home' ? 'active' : ''}`}
+            component={Link}
+            to="/home"
           >
-            <Link to='/home'>
             Home
-            </Link>
           </Button>
           <Button
-            id="fade-button"
-            className="!bg-slate-950 !text-white"
+            id="portal-button"
+            className={`nav-button ${location.pathname.startsWith('/user') || location.pathname.startsWith('/admin') ? 'active' : ''}`}
             aria-controls={open ? "basic-menu" : undefined}
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
@@ -42,12 +44,12 @@ const Navbar = () => {
             E-Portal
           </Button>
           <Button
-            id="fade-button"
-            className="!bg-slate-950 !text-white"
+            id="about-button"
+            className={`nav-button ${location.pathname === '/about' ? 'active' : ''}`}
+            component={Link}
+            to="/about"
           >
-            <Link to='/about'>
             About
-            </Link>
           </Button>
 
           <Menu
@@ -56,14 +58,22 @@ const Navbar = () => {
             open={open}
             onClose={handleClose}
             MenuListProps={{
-              "aria-labelledby": "fade-button",
+              "aria-labelledby": "portal-button",
             }}
           >
-            <MenuItem onClick={handleClose}>
-              <Link to="/admin/login">Staff</Link>
+            <MenuItem
+              onClick={handleClose}
+              component={Link}
+              to="/admin/login"
+            >
+              Staff
             </MenuItem>
-            <MenuItem onClick={handleClose}>
-              <Link to="/user/login">Student</Link>
+            <MenuItem
+              onClick={handleClose}
+              component={Link}
+              to="/user/login"
+            >
+              Student
             </MenuItem>
           </Menu>
         </div>
