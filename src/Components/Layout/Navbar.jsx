@@ -18,13 +18,13 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-slate-950 text-white flex justify-between items-center lg:px-20 lg:py-7 fixed top-0 w-full z-50">
+      <nav className="bg-gradient-to-r from-slate-900 to-slate-950 text-white flex justify-between items-center lg:px-10 lg:py-7 fixed top-0 w-screen z-50 p-2">
         <div>
           <Link to="/home">
             <p className="logo">Learnify</p>
           </Link>
         </div>
-        <div className="flex lg:gap-5 lg:me-5">
+        <div className="flex lg:gap-5 lg:me-10">
           <Button
             id="home-button"
             className={`nav-button ${location.pathname === '/home' ? 'active' : ''}`}
@@ -43,15 +43,6 @@ const Navbar = () => {
           >
             E-Portal
           </Button>
-          <Button
-            id="about-button"
-            className={`nav-button ${location.pathname === '/about' ? 'active' : ''}`}
-            component={Link}
-            to="/about"
-          >
-            About
-          </Button>
-
           <Menu
             id="basic-menu"
             anchorEl={anchorEl}
@@ -76,6 +67,24 @@ const Navbar = () => {
               Student
             </MenuItem>
           </Menu>
+          <Button
+            id="about-button"
+            className={`nav-button ${location.pathname === '/about' ? 'active' : ''}`}
+            component={Link}
+            to="/about"
+          >
+            About
+          </Button>
+          <Button
+            id="news-button"
+            className={`nav-button ${location.pathname === '/news' ? 'active' : ''}`}
+            component={Link}
+            to="/news"
+          >
+            News
+          </Button>
+
+         
         </div>
       </nav>
     </>

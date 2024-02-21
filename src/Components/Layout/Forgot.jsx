@@ -21,14 +21,16 @@ const Forgot = () => {
 
     });
     return (
-        <section>
-            <h1 className="text-center mt-10 font-bold text-3xl">Log in</h1>
-            <form onSubmit={handleSubmit} className="p-10">
-                <input type="email" placeholder='Email address' onChange={handleChange} name="email" value={values.email} className="w-full mb-3 p-3 bg-slate-100" /> <span>{errors.email}</span>
-                <button type="submit" className="bg-orange-300 p-3 text-white rounded w-full mb-3 font-bold">Send OTP</button>
+        <>
+        <section className="flex justify-center items-center lg:p-48 bg-slate-900 p-5 h-screen">
+            <form onSubmit={handleSubmit} className=" w-96">
+                {/* <h1 className="mb-5">Forget password</h1> */}
+                <input type="email" placeholder='Email address' onChange={handleChange} name="email" value={values.email} className="w-full mb-3 p-3 bg-slate-100 rounded-md" /> <span>{errors.email}</span>
+                <button type="submit" className="bg-blue-500 p-3 text-white rounded w-full mb-3 font-bold">Send OTP</button>
                 
             </form>
         </section>
+        </>
     )
 }
 

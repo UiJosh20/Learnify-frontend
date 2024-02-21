@@ -7,8 +7,8 @@
 }
 
 h1{
-  font-size: 42px !important;
-  width: 600px;
+  font-size: 40px !important;
+  width: 600px; 
   font-family: 'REM', sans-serif;
 
 }
@@ -28,7 +28,4 @@ h1{
 
 .nav-button.active {
   border-bottom: 2px solid goldenrod;
-}
-.wedit{
-  width:650px;
 }
