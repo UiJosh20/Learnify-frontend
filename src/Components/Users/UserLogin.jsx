@@ -23,6 +23,9 @@ const UserLogin = () => {
         onSubmit: (values) => {
             console.log(values);
             axios.post(URL, values)
+            .then((result)=>{
+                navigate("/")
+            })
 
         }
 
@@ -42,7 +45,7 @@ const UserLogin = () => {
                     <Link to='/forgot'>Forgot password</Link>
                 </div>
                 <button type="submit" className="bg-yellow-500 p-3 text-white rounded w-full mb-3 font-bold">login</button>
-                <p className="text-center">Don't have an account? <Link to='/signup' className="text-gray-500 font-bold">Sign up</Link></p>
+                <p className="text-center">Don't have an account? <Link to='/user/signup' className="text-gray-500 font-bold">Sign up</Link></p>
             </form>
             
             </main>
