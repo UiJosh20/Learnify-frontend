@@ -7,12 +7,7 @@ import { userLoginSchema} from "../Schema/loginUser"
 const UserLogin = () => {
     const navigate = useNavigate()
     const URL = "http://localhost:3000/user/login"
-    // const [loading, setLoading] = useState(true)
-    
-    // useEffect(() => {
-      
-    // })
-    
+
 
     const { handleChange, handleSubmit, values, errors } = useFormik({
         initialValues: {
@@ -25,8 +20,9 @@ const UserLogin = () => {
             axios.post(URL, values)
             .then((result)=>{
                 console.log(result.data)
-                if(result.data.status == true){
-                    navigate("/")
+                if(result.data.status == true && result.data.token){
+                    localStorage.setItem("token", result.data.token)
+                    navigate("/user/dashboard")
                 }else{
                     navigate("/login")
                 }

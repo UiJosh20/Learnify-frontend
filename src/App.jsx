@@ -7,6 +7,8 @@ import AdminLogin from "./Components/Admin/AdminLogin"
 import Home from "./Components/Layout/Home"
 import Layout from "./Components/Layout/Layout"
 import NotFound from "./Components/Layout/NotFound"
+import UserDashboard from "./Components/Users/UserDashboard"
+import UserLayout from "./Components/Users/UserLayout"
 
 
 function App() {
@@ -18,8 +20,14 @@ function App() {
         <Route path="/" element={<Layout/>}>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home/>} />
+          
         <Route path="*" element={<NotFound/>}/>
 
+        </Route>
+
+        <Route path="/user" element={<UserLayout/>}>
+        <Route path="/user" element={<Navigate to="/user/dashboard" />} />
+          <Route path="/user/dashboard" element={<UserDashboard/>} />
         </Route>
         
         <Route path="/user/login" element={<UserLogin/>} />
