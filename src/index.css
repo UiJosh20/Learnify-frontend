@@ -32,3 +32,18 @@ p{
 .nav-button.active {
   border-bottom: 2px solid goldenrod;
 }
+
+.facebook {
+  background-color: blue;
+  color: white;
+}
+
+.whatsapp {
+  background-color: green;
+  color: white;
+}
+
+.twitter {
+  background-color: black;
+  color: white;
+}
