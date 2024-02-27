@@ -10,7 +10,10 @@ h1{
   font-size: 40px !important;
   width: 600px; 
   font-family: 'REM', sans-serif;
-
+}
+p{
+  font-family: 'REM', sans-serif;
+  
 }
 .logo{
   font-family: 'Major Birch', sans-serif;

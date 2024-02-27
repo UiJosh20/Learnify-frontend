@@ -39,8 +39,8 @@ const UserSignup = () => {
   return (
     <section className="flex justify-center bg-gradient-to-r from-slate-600 to-slate-900 h-screen lg:p-10 w-full">
       <main className="shadow-md bg-black  text-white  lg:rounded-lg px-2 py-10">
-      <h1 className="lg:pt-5 font-bold lg:text-3xl text-center lg:block hidden w-full text-yellow-500">Create Student Account</h1>
-      <p className="pt-5 font-bold text-2xl text-center lg:hidden mt-20 mb-10 text-yellow-500">Create Student Account</p>
+      <h1 className="lg:pt-5 font-bold lg:text-3xl text-center lg:block hidden w-full text-blue-300">Create Student Account</h1>
+      <p className="pt-5 font-bold text-2xl text-center lg:hidden mt-10 mb-7 text-blue-300">Create Student Account</p>
       <form onSubmit={handleSubmit} className="lg:p-10 p-5">
         <input
           type="text"
@@ -80,7 +80,7 @@ const UserSignup = () => {
         <span className="text-red-500 font-bold">{errors.password}</span>
         <button
           type="submit"
-          className="w-full p-3 mb-3 font-bold bg-yellow-500 text-white rounded-md"
+          className="w-full p-3 mb-3 font-bold bg-blue-300 text-white rounded-md"
         >
           Signup
         </button>

@@ -30,16 +30,19 @@ const AdminSignup = () => {
 
     });
     return (
-        <section>
-            <h1 className="mt-10 font-bold text-center text-3xl">Sign in</h1>
-            <form onSubmit={handleSubmit} className="p-10">
-                <input type="text" placeholder='First Name' onChange={handleChange} name="firstName" value={values.firstName} className="w-full p-3 mb-3 text-black"/> <span>{errors.firstName}</span>
-                <input type="text" placeholder='Last Name' onChange={handleChange} name="lastName" value={values.lastName} className="w-full p-3 mb-3 text-black"/> <span>{errors.lastName}</span>
-                <input type="email" placeholder='Email address' onChange={handleChange} name="email" value={values.email} className="w-full p-3 mb-3 text-black"/> <span>{errors.email}</span>
-                <input type="password" placeholder='Password' onChange={handleChange} name="password" value={values.password} className="w-full p-3 mb-3 text-black"/> <span>{errors.password}</span>
-                <button type="submit" className="w-full p-3 mb-3 font-bold bg-yellow-500 text-white">Signup</button>
-                <p className="text-center">you already have an account? <Link to='/' className="text-gray-600 font-bold">Login</Link></p>
+        <section className="flex justify-center bg-gradient-to-r from-yellow-600 to-yellow-300 h-screen lg:p-10">
+            <main className="shadow-md bg-black  text-white  lg:rounded-lg px-2 py-10"> 
+            <h1 className="mt-5 font-bold text-center text-3xl w-full lg:block hidden">Create Admin Account</h1>
+            <p className="pt-5 font-bold text-4xl text-center lg:hidden mt-10 mb-7 ">Create Admin</p>
+            <form onSubmit={handleSubmit} className="lg:p-10 p-5">
+                <input type="text" placeholder='First Name' onChange={handleChange} name="firstName" value={values.firstName} className="w-full p-2 mb-3 text-black rounded-md"/> <span>{errors.firstName}</span>
+                <input type="text" placeholder='Last Name' onChange={handleChange} name="lastName" value={values.lastName} className="w-full p-2 mb-3 text-black rounded-md"/> <span>{errors.lastName}</span>
+                <input type="email" placeholder='Email address' onChange={handleChange} name="email" value={values.email} className="w-full p-2 mb-3 text-black rounded-md"/> <span>{errors.email}</span>
+                <input type="password" placeholder='Password' onChange={handleChange} name="password" value={values.password} className="w-full p-2 mb-3 text-black rounded-md"/> <span>{errors.password}</span>
+                <button type="submit" className="w-full p-3 mb-3 font-bold bg-yellow-500 text-white rounded-lg">Signup</button>
+                <p className="text-center">you already have an account? <Link to='/admin/login' className="text-gray-600 font-bold">Login</Link></p>
             </form>
+            </main>
         </section>
     )
 }
