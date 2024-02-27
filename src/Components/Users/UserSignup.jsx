@@ -26,7 +26,7 @@ const UserSignup = () => {
           if (response.data.status == 200){
                 navigate("/user/login");
           }else{
-            
+            navigate("/user/signup")
           }
         })
         .catch((error) => {
