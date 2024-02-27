@@ -9,11 +9,11 @@ const Home = () => {
     <>
       <main className="bg-gradient-to-r from-slate-900 to-slate-950 lg:flex justify-between lg:px-20 lg:mt-20 w-full">
         <div className="text-white break-words font-bold lg:mx-20 lg:mt-36 lg:visible invisible">
-          <div className="flex flex-col fixed left-0">
+          {/* <div className="flex flex-col fixed left-0">
             <Link className="facebook p-2">Facebook</Link>
             <Link className="whatsapp p-2">WhatsApp</Link>
             <Link className="twitter p-2">Twitter</Link>
-          </div>
+          </div> */}
 
           <h1>
             STUDY WHENEVER AND BECOME A GLOBAL TALENT

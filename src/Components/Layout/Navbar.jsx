@@ -24,7 +24,7 @@ const Navbar = () => {
             <p className="logo">Learnify</p>
           </Link>
         </div>
-        <div className="flex lg:gap-5 lg:me-10 lg:block hidden">
+        <div className="lg:gap-5 lg:me-10 lg:flex hidden">
           <Button
             id="home-button"
             className={`nav-button ${location.pathname === '/home' ? 'active' : ''}`}

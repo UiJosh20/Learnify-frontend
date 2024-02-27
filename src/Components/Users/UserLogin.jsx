@@ -39,7 +39,7 @@ const UserLogin = () => {
             <input type="text" placeholder='Matric Number' onChange={handleChange} name="matricNumber" value={values.matricNumber} className="w-full mb-3 p-2 rounded-md outline-1 outline-slate-400 text-black" /> <span className="text-red-700">{errors.matricNumber}</span>
                 <input type="password" placeholder='Password' onChange={handleChange} name="password" value={values.password}  className="w-full p-2 mb-3 rounded-md outline-1 outline-slate-400 text-black"/> <span className="text-red-700">{errors.password}</span>
                 
-                <button type="submit" className="bg-yellow-500 p-3 text-white rounded w-full mb-3 font-bold bg-blue-300">login</button>
+                <button type="submit" className="p-3 text-white rounded w-full mb-3 font-bold bg-blue-300">login</button>
                 <p className="text-center">Don't have an account? <Link to='/user/signup' className="text-gray-500 font-bold">Sign up</Link></p>
             </form>
             
