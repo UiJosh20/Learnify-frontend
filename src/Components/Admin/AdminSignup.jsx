@@ -37,7 +37,7 @@ const AdminSignup = () => {
                 <input type="text" placeholder='Last Name' onChange={handleChange} name="lastName" value={values.lastName} className="w-full p-3 mb-3 text-black"/> <span>{errors.lastName}</span>
                 <input type="email" placeholder='Email address' onChange={handleChange} name="email" value={values.email} className="w-full p-3 mb-3 text-black"/> <span>{errors.email}</span>
                 <input type="password" placeholder='Password' onChange={handleChange} name="password" value={values.password} className="w-full p-3 mb-3 text-black"/> <span>{errors.password}</span>
-                <button type="submit" className="w-full p-3 mb-3 font-bold bg-black text-white">Signup</button>
+                <button type="submit" className="w-full p-3 mb-3 font-bold bg-yellow-500 text-white">Signup</button>
                 <p className="text-center">you already have an account? <Link to='/' className="text-gray-600 font-bold">Login</Link></p>
             </form>
         </section>
