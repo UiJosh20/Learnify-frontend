@@ -19,12 +19,11 @@ const UserLogin = () => {
             console.log(values);
             axios.post(URL, values)
             .then((result)=>{
-                console.log(result.data)
                 if(result.data.status == true && result.data.token){
                     localStorage.setItem("token", result.data.token)
                     navigate("/user/dashboard")
                 }else{
-                    navigate("/login")
+                    navigate("/user/login")
                 }
             })
 

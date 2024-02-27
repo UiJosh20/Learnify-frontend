@@ -12,7 +12,7 @@ const UserDashboard = () => {
         const token = localStorage.getItem('token');
         if (!token) {
           setLoading(false);
-          navigate('/');
+          navigate('/user/login');
         }
   
         axios.post('http://localhost:3000/user/verifyToken', { token })
@@ -23,6 +23,7 @@ const UserDashboard = () => {
                 setTokenMatch(true);
               } else {
                 console.log("Token doesn't match");
+            navigate('/user/login');
                 setLoading(true);
                 setTokenMatch(false);
               }
@@ -32,7 +33,7 @@ const UserDashboard = () => {
             console.error('Error verifying token:', error);
             setLoading(false);
             setTokenMatch(false);
-            navigate('/');
+            navigate('/user/login');
           });
       };
   
@@ -40,7 +41,8 @@ const UserDashboard = () => {
       const timeout = setTimeout(() => {
         if (loading) {
           setLoading(false);
-          navigate('/');
+          navigate('/user/login');
+
         }
       }, 3000); 
   
@@ -56,7 +58,7 @@ const UserDashboard = () => {
     }
   
     if (!tokenMatch) {
-      navigate('/');
+      navigate('/user/login');
       return null;
     }
   
