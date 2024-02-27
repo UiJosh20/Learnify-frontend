@@ -15,7 +15,7 @@ const Home = () => {
           <Button variant="contained" className="!mt-4 !bg-yellow-600 !p-4 w-40 !font-bold">Get started</Button>
         </div>
 
-        <div className="text-white break-words font-bold lg:invisible w-full px-5 -mt-20">
+        <div className="text-white break-words font-bold lg:hidden w-full px-5 -mt-20">
           <h3 className="text-4xl">
             STUDY WHENEVER AND BECOME A GLOBAL TALENT
           </h3>
@@ -28,8 +28,8 @@ const Home = () => {
         </div>
       </main>
     
-      <main className="lg:p-20">
-        <h2 className="text-3xl font-bold">Join us. Become the best</h2>
+      <main className="lg:p-20 p-5">
+        <h2 className="lg:text-3xl font-bold text-2xl">Join us. Become the best</h2>
         <div>
           <p>
             LOOK OUT!!

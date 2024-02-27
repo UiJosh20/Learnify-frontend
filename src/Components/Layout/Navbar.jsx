@@ -18,13 +18,13 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-gradient-to-r from-slate-900 to-slate-950 text-white flex justify-between items-center lg:px-10 lg:py-7 fixed top-0 w-screen z-50 p-2">
+      <nav className="bg-gradient-to-r from-slate-900 to-slate-950 text-white flex justify-between items-center lg:px-10 lg:py-7 fixed top-0 w-screen z-50 lg:p-2 p-5">
         <div>
           <Link to="/home">
             <p className="logo">Learnify</p>
           </Link>
         </div>
-        <div className="flex lg:gap-5 lg:me-10">
+        <div className="flex lg:gap-5 lg:me-10 lg:block hidden">
           <Button
             id="home-button"
             className={`nav-button ${location.pathname === '/home' ? 'active' : ''}`}
