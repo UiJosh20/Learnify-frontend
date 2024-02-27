@@ -37,58 +37,62 @@ const UserSignup = () => {
   });
 
   return (
-    <section>
-      <h1 className="mt-10 font-bold text-center text-3xl">Sign in</h1>
-      <form onSubmit={handleSubmit} className="p-10">
+    <section className="flex justify-center bg-gradient-to-r from-slate-600 to-slate-900 h-screen lg:p-10 w-full">
+      <main className="shadow-md bg-gradient-to-r from-slate-900 to-slate-950 text-white  lg:rounded-lg px-2 py-10">
+      <h1 className="lg:pt-5 font-bold lg:text-3xl text-center lg:block hidden w-full">Create Student Account</h1>
+      <p className="pt-5 font-bold text-2xl text-center lg:hidden mt-20 mb-10">Create Student Account</p>
+      <form onSubmit={handleSubmit} className="lg:p-10 p-5">
         <input
           type="text"
           placeholder="First Name"
           onChange={handleChange}
           name="firstName"
           value={values.firstName}
-          className="w-full p-3 mb-3"
+          className="w-full p-3 mb-3 text-black rounded-md"
         />
-        <span>{errors.firstName}</span>
+        <span className="text-red-500 font-bold">{errors.firstName}</span>
         <input
           type="text"
           placeholder="Last Name"
           onChange={handleChange}
           name="lastName"
           value={values.lastName}
-          className="w-full p-3 mb-3"
+          className="w-full p-3 mb-3 text-black rounded-md"
         />
-        <span>{errors.lastName}</span>
+        <span className="text-red-500 font-bold">{errors.lastName}</span>
         <input
           type="email"
           placeholder="Email address"
           onChange={handleChange}
           name="email"
           value={values.email}
-          className="w-full p-3 mb-3"
+          className="w-full p-3 mb-3 text-black rounded-md"
         />
-        <span>{errors.email}</span>
+        <span className="text-red-500 font-bold">{errors.email}</span>
         <input
           type="password"
           placeholder="Password"
           onChange={handleChange}
           name="password"
           value={values.password}
-          className="w-full p-3 mb-3"
+          className="w-full p-3 mb-3 text-black rounded-md"
         />
-        <span>{errors.password}</span>
+        <span className="text-red-500 font-bold">{errors.password}</span>
         <button
           type="submit"
-          className="w-full p-3 mb-3 font-bold bg-green-600 text-white"
+          className="w-full p-3 mb-3 font-bold bg-green-600 text-white rounded-md"
         >
           Signup
         </button>
         <p className="text-center">
           you already have an account?{" "}
-          <Link to="/user/login" className="text-gray-600 font-bold">
+          <Link to="/user/login" className="text-gray-600 font-bold rounded-md" rounded-md outline-slate-300>
             Login
           </Link>
         </p>
       </form>
+      </main>
+      
     </section>
   );
 };
