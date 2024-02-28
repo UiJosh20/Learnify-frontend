@@ -40,7 +40,12 @@ const UserLogin = () => {
                 
                 <button type="submit" className="p-3 text-white rounded w-full mb-3 font-bold bg-blue-300">login</button>
                 <p className="text-center">Don't have an account? <Link to='/user/signup' className="text-gray-500 font-bold">Sign up</Link></p>
+            <div className="w-full flex justify-center lg:pt-4 text-yellow-300 font-bold">
+            <Link to='/forgot'>forget password?</Link>
+            </div>
             </form>
+
+
             
             </main>
         </section>

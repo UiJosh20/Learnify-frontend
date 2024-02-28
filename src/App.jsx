@@ -11,6 +11,7 @@ import UserDashboard from "./Components/Users/UserDashboard"
 import UserLayout from "./Components/Users/UserLayout"
 import AdminDashboard from "./Components/Admin/AdminDashboard"
 import AdminLayout from "./Components/Admin/AdminLayout"
+import InputOTP from "./Components/Layout/InputOTP"
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
         </Route>
         
         <Route path="/forgot" element={<Forgot/>}/>
+        <Route path="/verifyotp" element={<InputOTP/>}/>
         
       </Routes>
     </>
