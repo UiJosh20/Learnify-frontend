@@ -6,7 +6,7 @@ import { verifySchema } from "../Schema/verifySchema";
 
 const InputOTP = () => {
     const navigate = useNavigate();
-    const URL = "http://localhost:3000/verifyotp";
+    const URL = "http://localhost:3000/user/verifyotp";
     const [buttonText, setButtonText] = useState("Verify OTP");
 
     const { handleChange, handleSubmit, values, errors } = useFormik({
@@ -19,10 +19,10 @@ const InputOTP = () => {
             axios.post(URL, values)
             .then((response)=>{
                 if (response.data.status == true){
+                    setButtonText("Verified");
                     setTimeout(() => {
-                        setButtonText("Verified");
+                        navigate("/user/createpassword");
                     }, 3000); 
-                    navigate("/createpassword");
                 }
                
             })

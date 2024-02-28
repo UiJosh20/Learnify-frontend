@@ -6,7 +6,7 @@ import { forgotSchema } from "../Schema/forgotSchema"
 
 const Forgot = () => {
     const navigate = useNavigate()
-    const URL = "http://localhost:3000/forgot"
+    const URL = "http://localhost:3000/user/forgot"
     const [buttonText, setButtonText] = useState("Send OTP")
 
     const { handleChange, handleSubmit, values, errors } = useFormik({
@@ -20,11 +20,11 @@ const Forgot = () => {
             .then((response)=>{
                 if(response.data.otp){
                     setTimeout(() => {
-                        navigate("/verifyotp")
+                        navigate("/user/verifyotp")
                     }, 3000); // Navigate after 3 seconds
                 } else {
                     setButtonText("Send OTP")
-                    navigate("/forgot")
+                    navigate("/user/forgot")
                 }
             })
             .finally(() => {
