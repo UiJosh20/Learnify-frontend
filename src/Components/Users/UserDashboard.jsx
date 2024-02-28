@@ -2,7 +2,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import UserNav from './UserNav';
+
 
 const UserDashboard = () => {
     const navigate = useNavigate();
@@ -71,9 +71,8 @@ const UserDashboard = () => {
   
     return (
       <>
-        <UserNav/>
-        <div className="ml-80 mt-20">
-          <h1>Dashboard content</h1>
+        <div className="px-80 mt-20 text-gray-200 flex  justify-center items-center w-full">
+          <h1 className='w-full'>Welcome to Student Dashboard</h1>
         </div>
       </>
     );

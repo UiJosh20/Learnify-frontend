@@ -1,10 +1,12 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
+import UserNav from './UserNav'
 
 const UserLayout = () => {
   return (
     <>
-    <Outlet/>
+      <UserNav />
+      <Outlet />
     </>
   )
 }

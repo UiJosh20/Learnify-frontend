@@ -13,8 +13,12 @@ h1{
 }
 p{
   font-family: 'REM', sans-serif;
-  
 }
+
+small{
+  font-family: 'Inclusive Sans', sans-serif;
+}
+
 .logo{
   font-family: 'Major Birch', sans-serif;
   color:rgb(255, 183, 0);
@@ -37,6 +41,7 @@ p{
 .nav-button.active {
   border-bottom: 2px solid goldenrod;
 }
+
 
 .facebook {
   background-color: blue;
