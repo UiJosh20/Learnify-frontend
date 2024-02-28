@@ -17,8 +17,13 @@ p{
 }
 .logo{
   font-family: 'Major Birch', sans-serif;
-  color:goldenrod;
+  color:rgb(255, 183, 0);
   font-size: 30px;
+}
+.logo1{
+  font-family: 'Major Birch', sans-serif;
+  color:rgb(255, 184, 6);
+  font-size: 20px;
 }
 
 .nav-button {

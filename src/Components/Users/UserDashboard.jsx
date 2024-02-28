@@ -1,6 +1,8 @@
+
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import UserNav from './UserNav';
 
 const UserDashboard = () => {
     const navigate = useNavigate();
@@ -54,7 +56,12 @@ const UserDashboard = () => {
     }, [navigate, loading]);
   
     if (loading) {
-      return <div>Loading...</div>;
+      return <>
+      <div>
+        <h1>Loading...</h1>
+       
+      </div>
+      </>;
     }
   
     if (!tokenMatch) {
@@ -64,8 +71,10 @@ const UserDashboard = () => {
   
     return (
       <>
-        <h1>user Dashboard</h1>
-        {/* Add your dashboard content here */}
+        <UserNav/>
+        <div className="ml-80 mt-20">
+          <h1>Dashboard content</h1>
+        </div>
       </>
     );
 }
