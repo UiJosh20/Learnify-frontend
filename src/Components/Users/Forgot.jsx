@@ -21,14 +21,14 @@ const Forgot = () => {
                 if(response.data.otp){
                     setTimeout(() => {
                         navigate("/user/verifyotp")
-                    }, 3000); // Navigate after 3 seconds
+                    }, 3000);
                 } else {
                     setButtonText("Send OTP")
                     navigate("/user/forgot")
                 }
             })
             .finally(() => {
-                // Reset button text after request completes
+              
                 setTimeout(() => {
                     setButtonText("Send OTP")
                 }, 3000);
@@ -40,7 +40,7 @@ const Forgot = () => {
         <>
         <section className="flex justify-center items-center lg:p-48 bg-slate-900 p-5 h-screen">
             <form onSubmit={handleSubmit} className=" w-96">
-                {/* <h1 className="mb-5">Forget password</h1> */}
+             
                 <input type="email" placeholder='Email address' onChange={handleChange} name="email" value={values.email} className="w-full mb-3 p-3 bg-slate-100 rounded-md" /> <span className="text-red-500">{errors.email}</span>
                 <button type="submit" className="bg-blue-500 p-3 text-white rounded w-full mb-3 font-bold" disabled={buttonText === "Sending OTP..."}>{buttonText}</button>
             </form>
