@@ -38,11 +38,11 @@ const AdminCreateNewPassword = () => {
     
     return (
         <>
-        <section className="flex justify-center items-center lg:p-48 bg-slate-900 p-5 h-screen">
+        <section className="flex justify-center items-center lg:p-48 bg-yellow-600 p-5 h-screen">
             <form onSubmit={handleSubmit} className=" w-96">
                 <input type="email" placeholder='Enter email address' onChange={handleChange} name="email" value={values.email} className="w-full mb-3 p-3 bg-slate-100 rounded-md" /> <span className="text-red-500">{errors.email}</span>
                 <input type="text" placeholder='Enter a new password' onChange={handleChange} name="password" value={values.password} className="w-full mb-3 p-3 bg-slate-100 rounded-md" /> <span className="text-red-500">{errors.password}</span>
-                <button type="submit" className="bg-blue-500 p-3 text-white rounded w-full mb-3 font-bold" disabled={buttonText === "Changing old password..."}>{buttonText}</button>
+                <button type="submit" className="bg-yellow-400 p-3 text-white rounded w-full mb-3 font-bold" disabled={buttonText === "Changing old password..."}>{buttonText}</button>
             </form>
         </section>
         </>
