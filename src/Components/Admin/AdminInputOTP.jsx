@@ -37,10 +37,10 @@ const AdminInputOTP = () => {
     
     return (
         <>
-        <section className="flex justify-center items-center lg:p-48 bg-yellow-600 p-5 h-screen">
+        <section className="flex justify-center items-center lg:p-48 bg-yellow-700 p-5 h-screen">
             <form onSubmit={handleSubmit} className=" w-96">
                 <input type="number" placeholder='Enter OTP' onChange={handleChange} name="otp" value={values.otp} className="w-full mb-3 p-3 bg-slate-100 rounded-md" /> <span className="text-red-500">{errors.otp}</span>
-                <button type="submit" className="bg-yellow-400 p-3 text-white rounded w-full mb-3 font-bold" disabled={buttonText === "Verifying..."}>{buttonText}</button>
+                <button type="submit" className="bg-yellow-500 p-3 text-white rounded w-full mb-3 font-bold" disabled={buttonText === "Verifying..."}>{buttonText}</button>
             </form>
         </section>
         </>
