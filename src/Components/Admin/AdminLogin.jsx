@@ -39,6 +39,9 @@ const AdminLogin = () => {
 
                     <button type="submit" className="lg:bg-yellow-500 p-3 text-white rounded w-full mb-3 font-bold bg-yellow-400">login</button>
                     <p className="text-center">Don't have an account? <Link to='/admin/signup' className="text-gray-500 font-bold">Sign up</Link></p>
+
+                    <Link to='/forgot'>forget password?</Link>
+
                 </form>
 
             </main>

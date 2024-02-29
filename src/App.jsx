@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom"
 import UserSignup from "./Components/Users/UserSignup"
-import Forgot from "./Components/Layout/Forgot"
+import Forgot from "./Components/Users/Forgot"
 import UserLogin from "./Components/Users/UserLogin"
 import AdminSignup from "./Components/Admin/AdminSignup"
 import AdminLogin from "./Components/Admin/AdminLogin"
@@ -11,8 +11,8 @@ import UserDashboard from "./Components/Users/UserDashboard"
 import UserLayout from "./Components/Users/UserLayout"
 import AdminDashboard from "./Components/Admin/AdminDashboard"
 import AdminLayout from "./Components/Admin/AdminLayout"
-import InputOTP from "./Components/Layout/InputOTP"
-import CreateNewPassword from "./Components/Layout/CreateNewPassword"
+import InputOTP from "./Components/Users/InputOTP"
+import CreateNewPassword from "./Components/Users/CreateNewPassword"
 
 
 function App() {
@@ -22,6 +22,8 @@ function App() {
     <>
       <Routes>
         <Route path="*" element={<NotFound/>}/>
+        
+
         <Route path="/" element={<Layout/>}>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home/>} />
