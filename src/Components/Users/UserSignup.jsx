@@ -19,10 +19,8 @@ const UserSignup = () => {
     initialValues,
     validationSchema: loginSchema,
     onSubmit: (values) => {
-      console.log(values);
       axios.post(URL, values)
         .then((response) => {
-          console.log(response.data);
           if (response.data.status == 200){
                 navigate("/user/login");
           }else{

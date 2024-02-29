@@ -16,7 +16,6 @@ const AdminSignup = () => {
         },
         validationSchema: loginSchema,
         onSubmit: (values) =>{
-            console.log(values);
             axios.post(URL, values)
             .then((response)=>{
                 if(response.data.status == 200){
