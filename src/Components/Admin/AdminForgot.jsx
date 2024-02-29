@@ -6,7 +6,7 @@ import axios from 'axios'
 
 const AdminForgot = () => {
     const navigate = useNavigate()
-    const URL = "http://localhost:3000/user/forgot"
+    const URL = "http://localhost:3000/admin/forgot"
     const [buttonText, setButtonText] = useState("Send OTP")
 
     const { handleChange, handleSubmit, values, errors } = useFormik({
@@ -20,11 +20,11 @@ const AdminForgot = () => {
             .then((response)=>{
                 if(response.data.otp){
                     setTimeout(() => {
-                        navigate("/user/verifyotp")
+                        navigate("/admin/verifyotp")
                     }, 3000);
                 } else {
                     setButtonText("Send OTP")
-                    navigate("/user/forgot")
+                    navigate("/admin/forgot")
                 }
             })
             .finally(() => {
@@ -38,9 +38,8 @@ const AdminForgot = () => {
 
     return (
         <>
-        <section className="flex justify-center items-center lg:p-48 bg-slate-900 p-5 h-screen">
+        <section className="flex justify-center items-center lg:p-48 bg-yellow-600 p-5 h-screen">
             <form onSubmit={handleSubmit} className=" w-96">
-                {/* <h1 className="mb-5">Forget password</h1> */}
                 <input type="email" placeholder='Email address' onChange={handleChange} name="email" value={values.email} className="w-full mb-3 p-3 bg-slate-100 rounded-md" /> <span className="text-red-500">{errors.email}</span>
                 <button type="submit" className="bg-blue-500 p-3 text-white rounded w-full mb-3 font-bold" disabled={buttonText === "Sending OTP..."}>{buttonText}</button>
             </form>

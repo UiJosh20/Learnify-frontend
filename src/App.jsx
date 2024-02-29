@@ -13,6 +13,7 @@ import AdminDashboard from "./Components/Admin/AdminDashboard"
 import AdminLayout from "./Components/Admin/AdminLayout"
 import InputOTP from "./Components/Users/InputOTP"
 import CreateNewPassword from "./Components/Users/CreateNewPassword"
+import AdminForgot from "./Components/Admin/AdminForgot"
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
 
         <Route path="/admin/signup" element={<AdminSignup />} />
         <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/forget" element={<AdminForgot />} />
         <Route path="/admin" element={<AdminLayout/>}>
         <Route path="/admin" element={<Navigate to="/admin/dashboard" />} />
           <Route path="/admin/dashboard" element={<AdminDashboard/>} />
