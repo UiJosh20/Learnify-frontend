@@ -1,11 +1,16 @@
-// UserNav.js
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+
+
+import { NavLink, useNavigate  } from 'react-router-dom';
 
 
 const UserNav = () => {
+    
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        navigate('/')
 
-
+    };
 
     return (
         <>
@@ -172,14 +177,14 @@ const UserNav = () => {
                     <span><small className='text-white '>Help</small></span>
                 </NavLink>
 
-                <NavLink to="/" className='flex gap-5 items-center ps-3 rounded-sm mb-4'>
+                <div onClick={handleLogout} className='flex gap-5 items-center ps-3 rounded-sm mb-4 cursor-pointer'>
 
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" color="#ffffff" fill="none">
                         <path d="M2.5 12C2.5 7.52166 2.5 5.28248 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28248 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1087C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1087C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-width="1.5" />
                         <path d="M7.03711 12.0277L14.0127 12.0277M14.0127 12.0277C14.0127 12.5982 11.8575 14.5151 11.8575 14.5151M14.0127 12.0277C14.0127 11.4424 11.8575 9.56334 11.8575 9.56334M17.0371 7.99536V15.9954" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
                     </svg>
                     <span><small className='text-white '>Logout</small></span>
-                </NavLink>
+                </div>
 
 
 
