@@ -30,7 +30,7 @@ const AdminLogin = () => {
     });
     return (
         <section className="flex justify-center bg-gradient-to-r from-yellow-600 to-yellow-300 h-screen" >
-            <main className="lg:m-20 shadow-md bg-black  text-white  lg:rounded-lg px-2 py-10 w-full">
+            <main className="lg:m-20 shadow-md bg-black  text-white  lg:rounded-lg px-2 py-10 ">
                 <h1 className="text-center w-full lg:mt-7 mt-20 lg:mb-1 mb-10 font-bold text-3xl text-white ">Admin Login</h1>
                 <form onSubmit={handleSubmit} className="lg:p-10 p-5">
                     <input type="text" placeholder='Admin ID' onChange={handleChange} name="adminId" value={values.adminId} className="w-full mb-3 p-2 rounded-md text-black" /> <span className="text-red-700">{errors.adminId}</span>
