@@ -15,7 +15,7 @@ const AdminLayout = () => {
   return (
     <>
       {loading ? (
-        <div className="flex justify-center items-center h-screen flex-col bg-yellow-800">
+        <div className="flex justify-center items-center h-screen flex-col bg-slate-950">
           <p className="logo1 !text-5xl mb-10 text-yellow-500">Learnify</p>
           <div className="loader"></div>
         </div>

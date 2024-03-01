@@ -79,3 +79,11 @@ small{
   }
 }
 
+.w96{
+  width: 40%;
+}
+@media screen and (max-width:870px) {
+  .w96{
+    width: 100%;
+  }
+}

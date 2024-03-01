@@ -30,10 +30,10 @@ const AdminSignup = () => {
     });
     return (
         <section className="flex justify-center bg-gradient-to-r from-slate-800 to-slate-900  h-screen lg:p-10">
-            <main className="shadow-md bg-black  text-white  lg:rounded-lg px-2 py-10"> 
+            <main className="shadow-md bg-black  text-white  lg:rounded-lg px-2 pt-5 w96"> 
             <h1 className="mt-5 font-bold text-center text-3xl w-full lg:block hidden">Create Admin Account</h1>
             <p className="pt-5 font-bold text-4xl text-center lg:hidden mt-10 mb-7 ">Create Admin</p>
-            <form onSubmit={handleSubmit} className="lg:p-10 p-5">
+            <form onSubmit={handleSubmit} className="lg:p-5 p-5">
                 <input type="text" placeholder='First Name' onChange={handleChange} name="firstName" value={values.firstName} className="w-full p-2 mb-3 text-black rounded-md"/> <span>{errors.firstName}</span>
                 <input type="text" placeholder='Last Name' onChange={handleChange} name="lastName" value={values.lastName} className="w-full p-2 mb-3 text-black rounded-md"/> <span>{errors.lastName}</span>
                 <input type="email" placeholder='Email address' onChange={handleChange} name="email" value={values.email} className="w-full p-2 mb-3 text-black rounded-md"/> <span>{errors.email}</span>
