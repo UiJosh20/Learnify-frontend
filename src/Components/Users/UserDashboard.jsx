@@ -57,10 +57,10 @@ const UserDashboard = () => {
   
     if (loading) {
       return <>
-      <div>
-        <h1>Loading...</h1>
-       
-      </div>
+      <div className="flex justify-center items-center h-screen flex-col">
+          <p className="logo1 !text-5xl mb-10 !text-slate-900">Learnify</p>
+          <div className="loader1"></div>
+        </div>
       </>;
     }
   

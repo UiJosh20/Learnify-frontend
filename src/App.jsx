@@ -39,8 +39,9 @@ function App() {
         <Route path="/user/forgot" element={<Forgot/>}/>
         <Route path="/user/verifyotp" element={<InputOTP/>}/>
         <Route path='/user/createpassword' element={<CreateNewPassword/>}/>
-        <Route path="/user" element={<UserLayout/>}>
-        <Route path="/user" element={<Navigate to="/user/dashboard" />} />
+
+         <Route path="/user" element={<UserLayout/>}>
+          <Route path="/user" element={<Navigate to="/user/dashboard" />} />
           <Route path="/user/dashboard" element={<UserDashboard/>} />
         </Route>
         
@@ -64,5 +65,6 @@ function App() {
     </>
   )
 }
+
 
 export default App

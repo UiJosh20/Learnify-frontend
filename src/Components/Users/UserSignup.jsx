@@ -36,7 +36,7 @@ const UserSignup = () => {
 
   return (
     <section className="flex justify-center bg-gradient-to-r from-slate-600 to-slate-900 h-screen lg:p-10 w-full">
-      <main className="shadow-md bg-black  text-white  lg:rounded-lg px-2 py-10">
+      <main className=" shadow-md bg-black  text-white lg:rounded-lg">
       <h1 className="lg:pt-5 font-bold lg:text-3xl text-center lg:block hidden w-full text-blue-300">Create Student Account</h1>
       <p className="pt-5 font-bold text-2xl text-center lg:hidden mt-10 mb-7 text-blue-300">Create Student Account</p>
       <form onSubmit={handleSubmit} className="lg:p-10 p-5">
