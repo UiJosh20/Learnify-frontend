@@ -22,8 +22,8 @@ const Home = () => {
           <Button variant="contained" className="!mt-4 !bg-yellow-600 !p-4 w-40 !font-bold">Get started</Button>
         </div>
 
-        <div className="text-white break-words font-bold lg:hidden w-full px-5 -mt-20">
-          <h3 className="text-4xl">
+        <div className="text-white break-words font-bold lg:hidden w-full px-8 -mt-20">
+          <h3 className="text-3xl">
             STUDY WHENEVER AND BECOME A GLOBAL TALENT
           </h3>
           <small>Learning any professional skill from the comfort of your home</small>
