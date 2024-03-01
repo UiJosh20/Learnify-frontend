@@ -8,10 +8,11 @@ const AdminSignup = () => {
     const navigate = useNavigate();
     const URL = "http://localhost:3000/admin/register";
     const [showPassword, setShowPassword] = useState(false);
+    const [signingUp, setSigningUp] = useState(false); // State to track signup process
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
 
     const { handleChange, handleSubmit, values, errors } = useFormik({
         initialValues: {
@@ -22,13 +23,24 @@ const AdminSignup = () => {
         },
         validationSchema: loginSchema,
         onSubmit: (values) => {
+            setSigningUp(true);
             axios.post(URL, values)
                 .then((response) => {
                     if (response.data.status == 200) {
-                        navigate("/admin/login");
+                        setTimeout(() => {
+                            navigate("/admin/login");
+                        }, 3000);
                     } else {
                         navigate("/admin/signup");
                     }
+                })
+                .catch((error) => {
+                    console.error("Signup failed:", error);
+                })
+                .finally(() => {
+                    setTimeout(() => {
+                        setSigningUp(false);
+                    }, 3000);
                 });
         }
     });
@@ -61,7 +73,9 @@ const AdminSignup = () => {
                         </span>
                     </div>
                     <span className="text-red-500 font-bold">{errors.password}</span>
-                    <button type="submit" className="w-full p-3 mb-3 font-bold bg-blue-500 text-white rounded-md">Signup</button>
+                    <button type="submit" className="w-full p-3 mb-3 font-bold bg-blue-500 text-white rounded-md" disabled={signingUp}>
+                        {signingUp ? "Signing up..." : "Signup"} 
+                    </button>
                     <p className="text-center">you already have an account? <Link to='/admin/login' className="text-gray-600 font-bold">Login</Link></p>
                 </form>
             </main>

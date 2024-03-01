@@ -15,6 +15,7 @@ const UserSignup = () => {
   const navigate = useNavigate();
   const URL = "http://localhost:3000/user/register";
   const [showPassword, setShowPassword] = useState(false);
+  const [signingUp, setSigningUp] = useState(false); // State to track signup process
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -24,17 +25,24 @@ const UserSignup = () => {
     initialValues,
     validationSchema: loginSchema,
     onSubmit: (values) => {
+      setSigningUp(true); 
       axios.post(URL, values)
         .then((response) => {
           if (response.data.status == 200) {
-            navigate("/user/login");
+            setTimeout(() => {
+              navigate("/user/login");
+            }, 3000);
           } else {
-            navigate("/user/signup")
+            navigate("/user/signup");
           }
         })
         .catch((error) => {
           console.error("Registration failed:", error);
-
+        })
+        .finally(() => {
+          setTimeout(() => {
+            setSigningUp(false);
+          }, 3000);
         });
     },
   });
@@ -104,8 +112,9 @@ const UserSignup = () => {
           <button
             type="submit"
             className="w-full p-3 font-bold bg-blue-500 text-white rounded-md"
+            disabled={signingUp} 
           >
-            Signup
+            {signingUp ? "Signing up..." : "Signup"} 
           </button>
           <p className="text-center">
             you already have an account?{" "}
