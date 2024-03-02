@@ -188,7 +188,7 @@ const UserNav = () => {
 
     return (
         <>
-            <nav className='w-full shadow-md lg:px-5 lg:py-3  fixed top-0 z-10'>
+            <nav className='w-full shadow-md lg:px-10 lg:py-3  fixed top-0 z-10'>
                 <div className='flex justify-between'>
                     <div>
                     <MenuIcon onClick={toggleDrawer(true)}></MenuIcon>

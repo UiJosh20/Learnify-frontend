@@ -3,7 +3,8 @@ import axios from "axios";
 import { useFormik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import { loginSchema } from "../Schema/userSchema";
-
+import Alert from '@mui/material/Alert';
+import CheckIcon from '@mui/icons-material/Check';
 const initialValues = {
   firstName: "",
   lastName: "",
@@ -52,6 +53,13 @@ const UserSignup = () => {
       <main className=" shadow-md bg-black  text-white lg:rounded-lg w96 lg:py-3">
         <h1 className="lg:py-5 font-bold lg:text-3xl text-center lg:block hidden w-full text-white">Create Student Account</h1>
         <p className="pt-5 font-bold text-2xl text-center lg:hidden mt-10 mb-7 text-white">Create Student Account</p>
+        <div className="px-5">
+                   {(errors.firstName || errors.lastName ||errors.email || errors.password) && (
+                        <Alert sx={{width: "100%"}} severity="error">
+                             {errors.firstName || errors.lastName ||errors.email || errors.password}
+                        </Alert>
+                    )}
+                    </div>
         <form onSubmit={handleSubmit} className="lg:p-5 p-5">
           <div className="border flex items-center bg-white p-2 mb-3 rounded-md outline-1 outline-slate-400">
             <input
@@ -66,7 +74,7 @@ const UserSignup = () => {
               info
             </span>
           </div>
-          <span className="text-red-500 font-bold">{errors.firstName}</span>
+        
           <div className="border flex items-center bg-white p-2 mb-3 rounded-md outline-1 outline-slate-400">
             <input
               type="text"
@@ -80,7 +88,7 @@ const UserSignup = () => {
               info
             </span>
           </div>
-          <span className="text-red-500 font-bold">{errors.lastName}</span>
+    
           <div className="border flex items-center bg-white p-2 mb-3 rounded-md outline-1 outline-slate-400">
             <input
               type="email"
@@ -94,7 +102,6 @@ const UserSignup = () => {
               mail
             </span>
           </div>
-          <span className="text-red-500 font-bold">{errors.email}</span>
           <div className="border flex items-center bg-white p-2 mb-3 rounded-md outline-1 outline-slate-400">
             <input
               type={showPassword ? "text" : "password"}
@@ -108,7 +115,6 @@ const UserSignup = () => {
               {showPassword ? "visibility" : "visibility_off"}
             </span>
           </div>
-          <span className="text-red-500 font-bold">{errors.password}</span>
           <button
             type="submit"
             className="w-full p-3 font-bold bg-blue-500 text-white rounded-md"

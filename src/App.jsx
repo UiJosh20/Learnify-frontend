@@ -42,7 +42,7 @@ function App() {
 
          <Route path="/user" element={<UserLayout/>}>
           <Route path="/user" element={<Navigate to="/user/dashboard" />} />
-          <Route path="/user/dashboard" element={<UserDashboard/>} />
+          <Route path="/user/dashboard" element={<UserDashboard  />} />
         </Route>
         
 
