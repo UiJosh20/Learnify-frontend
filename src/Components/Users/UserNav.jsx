@@ -1,33 +1,27 @@
-
-
-import { NavLink, useNavigate  } from 'react-router-dom';
-
+import { NavLink, useNavigate } from 'react-router-dom';
+import Box from '@mui/material/Box';
+import Drawer from '@mui/material/Drawer';
+import Button from '@mui/material/Button';
+import MenuIcon from '@mui/icons-material/Menu';
+import { useState } from 'react';
 
 const UserNav = () => {
-    
+
     const navigate = useNavigate();
     const handleLogout = () => {
         localStorage.removeItem('token');
         navigate('/')
-
     };
 
-    return (
-        <>
-            <nav className='w-full shadow-md lg:px-5 lg:py-3  fixed top-0 z-10'>
-                <div className='flex justify-between'>
-                    <div></div>
-                    <div className='flex gap-10 items-center'>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" color="#000000" fill="none">
-                            <path d="M5.15837 11.491C5.08489 12.887 5.16936 14.373 3.92213 15.3084C3.34164 15.7438 3 16.427 3 17.1527C3 18.1508 3.7818 19 4.8 19H19.2C20.2182 19 21 18.1508 21 17.1527C21 16.427 20.6584 15.7438 20.0779 15.3084C18.8306 14.373 18.9151 12.887 18.8416 11.491C18.6501 7.85223 15.6438 5 12 5C8.35617 5 5.34988 7.85222 5.15837 11.491Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M10.5 3.125C10.5 3.95343 11.1716 5 12 5C12.8284 5 13.5 3.95343 13.5 3.125C13.5 2.29657 12.8284 2 12 2C11.1716 2 10.5 2.29657 10.5 3.125Z" stroke="currentColor" stroke-width="1.5" />
-                            <path d="M15 19C15 20.6569 13.6569 22 12 22C10.3431 22 9 20.6569 9 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        <div className='bg-gray-500 rounded-full p-3'></div>
-                    </div>
-                </div>
-            </nav>
-            <nav className=' w-60 shadow-sm bg-gradient-to-r from-slate-950 to-slate-900 lg:p-5 h-screen fixed top-0 left-0 z-10 overflow-auto'>
+    const [open, setOpen] = useState(false);
+
+    const toggleDrawer = (newOpen) => () => {
+        setOpen(newOpen);
+    };
+
+    const DrawerList = (
+        <Box sx={{ width: 240 }} role="presentation" onClick={toggleDrawer(false)}>
+             <nav className=' w-60 shadow-sm bg-gradient-to-r from-slate-950 to-slate-900 lg:p-5 h-screen fixed top-0 left-0 z-10 overflow-auto'>
                 <div className='mb-10'>
                     <p className="logo1">Learnify</p>
                 </div>
@@ -189,6 +183,31 @@ const UserNav = () => {
 
 
             </nav >
+        </Box>
+    )
+
+    return (
+        <>
+            <nav className='w-full shadow-md lg:px-5 lg:py-3  fixed top-0 z-10'>
+                <div className='flex justify-between'>
+                    <div>
+                    <MenuIcon onClick={toggleDrawer(true)}></MenuIcon>
+                    <Drawer open={open} onClose={toggleDrawer(false)}>
+                        {DrawerList}
+                    </Drawer>
+                    </div>
+                    <div className='flex gap-10 items-center'>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" color="#000000" fill="none">
+                            <path d="M5.15837 11.491C5.08489 12.887 5.16936 14.373 3.92213 15.3084C3.34164 15.7438 3 16.427 3 17.1527C3 18.1508 3.7818 19 4.8 19H19.2C20.2182 19 21 18.1508 21 17.1527C21 16.427 20.6584 15.7438 20.0779 15.3084C18.8306 14.373 18.9151 12.887 18.8416 11.491C18.6501 7.85223 15.6438 5 12 5C8.35617 5 5.34988 7.85222 5.15837 11.491Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M10.5 3.125C10.5 3.95343 11.1716 5 12 5C12.8284 5 13.5 3.95343 13.5 3.125C13.5 2.29657 12.8284 2 12 2C11.1716 2 10.5 2.29657 10.5 3.125Z" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M15 19C15 20.6569 13.6569 22 12 22C10.3431 22 9 20.6569 9 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <div className='bg-gray-500 rounded-full p-3'></div>
+                    </div>
+                </div>
+                   
+            </nav>
+           
         </>
     );
 };
