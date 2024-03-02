@@ -65,7 +65,7 @@ const UserLogin = () => {
                     </div>
                     <div className="px-5">
                    {(errors.matricNumber || errors.password) && (
-                        <Alert sx={{width: "100%"}} severity="error">
+                        <Alert sx={{width: "100%"}} severity="warning">
                              {errors.matricNumber || errors.password}
                         </Alert>
                     )}

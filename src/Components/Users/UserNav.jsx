@@ -1,7 +1,6 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
 
@@ -14,7 +13,6 @@ const UserNav = () => {
     };
 
     const [open, setOpen] = useState(false);
-
     const toggleDrawer = (newOpen) => () => {
         setOpen(newOpen);
     };

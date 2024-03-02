@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import { loginSchema } from "../Schema/userSchema";
 import { useState } from "react";
+import Alert from '@mui/material/Alert';
 
 const AdminSignup = () => {
     const navigate = useNavigate();
@@ -50,30 +51,34 @@ const AdminSignup = () => {
             <main className="shadow-md bg-black text-white lg:rounded-lg px-2 pt-5 w96">
                 <h1 className="mt-5 font-bold text-center text-3xl w-full lg:block hidden">Create Admin Account</h1>
                 <p className="pt-5 font-bold text-4xl text-center lg:hidden mt-10 mb-7">Create Admin</p>
+                <div className="px-5">
+                   {(errors.firstName || errors.lastName ||errors.email || errors.password) && (
+                        <Alert sx={{width: "100%"}} severity="warning">
+                             {errors.firstName || errors.lastName ||errors.email || errors.password}
+                        </Alert>
+                    )}
+                    </div>
                 <form onSubmit={handleSubmit} className="lg:p-5 p-5">
                     <div className="border flex items-center bg-white p-2 mb-3 rounded-md outline-1 outline-slate-400">
                         <input type="text" placeholder='First Name' onChange={handleChange} name="firstName" value={values.firstName} className="w-full outline-none text-black" />
                         <span className="material-symbols-outlined text-black">info</span>
                     </div>
-                    <span className="text-red-500 font-bold">{errors.firstName}</span>
+            
                     <div className="border flex items-center bg-white p-2 mb-3 rounded-md outline-1 outline-slate-400">
                         <input type="text" placeholder='Last Name' onChange={handleChange} name="lastName" value={values.lastName} className="w-full outline-none text-black" />
                         <span className="material-symbols-outlined text-black">info</span>
                     </div>
-                    <span className="text-red-500 font-bold">{errors.lastName}</span>
-                    <div className="border flex items-center bg-white p-2 mb-3 rounded-md outline-1 outline-slate-400">
+                                <div className="border flex items-center bg-white p-2 mb-3 rounded-md outline-1 outline-slate-400">
                         <input type="email" placeholder='Email address' onChange={handleChange} name="email" value={values.email} className="w-full outline-none text-black" />
                         <span className="material-symbols-outlined text-black">mail</span>
                     </div>
-                    <span className="text-red-500 font-bold">{errors.email}</span>
-                    <div className="border flex items-center bg-white p-2 mb-3 rounded-md outline-1 outline-slate-400">
+                             <div className="border flex items-center bg-white p-2 mb-3 rounded-md outline-1 outline-slate-400">
                         <input type="password" placeholder='Password' onChange={handleChange} name="password" value={values.password} className="w-full outline-none text-black" />
                         <span className="material-symbols-outlined text-black cursor-pointer" onClick={togglePasswordVisibility}>
                             {showPassword ? "visibility" : "visibility_off"}
                         </span>
                     </div>
-                    <span className="text-red-500 font-bold">{errors.password}</span>
-                    <button type="submit" className="w-full p-3 mb-3 font-bold bg-blue-500 text-white rounded-md" disabled={signingUp}>
+                                <button type="submit" className="w-full p-3 mb-3 font-bold bg-blue-500 text-white rounded-md" disabled={signingUp}>
                         {signingUp ? "Signing up..." : "Signup"} 
                     </button>
                     <p className="text-center">you already have an account? <Link to='/admin/login' className="text-gray-600 font-bold">Login</Link></p>

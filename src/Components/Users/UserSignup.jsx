@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import { loginSchema } from "../Schema/userSchema";
 import Alert from '@mui/material/Alert';
-import CheckIcon from '@mui/icons-material/Check';
+
 const initialValues = {
   firstName: "",
   lastName: "",
@@ -55,7 +55,7 @@ const UserSignup = () => {
         <p className="pt-5 font-bold text-2xl text-center lg:hidden mt-10 mb-7 text-white">Create Student Account</p>
         <div className="px-5">
                    {(errors.firstName || errors.lastName ||errors.email || errors.password) && (
-                        <Alert sx={{width: "100%"}} severity="error">
+                        <Alert sx={{width: "100%"}} severity="warning">
                              {errors.firstName || errors.lastName ||errors.email || errors.password}
                         </Alert>
                     )}
