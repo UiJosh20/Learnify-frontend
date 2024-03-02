@@ -65,8 +65,11 @@ const AdminDashboard = () => {
 
     return (
         <>
-        <div className="w-full flex justify-center items-center h-screen text-gray-300">
-            <h1>Admin Dashboard</h1>
+       <div className="px-10 lg:text-gray-200 flex  justify-center items-center w-full h-screen  text-black">
+          <div className='w-full text-center'>
+          <p className="text-2xl">Welcome to ADMIN Dashboard</p>
+          </div>
+         
         </div>
             
         </>

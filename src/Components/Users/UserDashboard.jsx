@@ -71,8 +71,10 @@ const UserDashboard = () => {
   
     return (
       <>
-        <div className="px-80 text-gray-200 flex  justify-center items-center w-full">
-          <h1 className='w-full'>Welcome to Student Dashboard</h1>
+        <div className="px-10 lg:text-gray-200 flex  justify-center items-center w-full h-screen  text-black">
+          <div className='w-full text-center'>
+          <p className="text-2xl">Welcome to Student Dashboard</p>
+          </div>
          
         </div>
 
