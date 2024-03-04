@@ -64,6 +64,8 @@ const UserSignup = () => {
     handleChange(e); 
 };
 
+
+
   return (
     <section className="flex justify-center bg-gradient-to-r from-slate-800 to-slate-900  h-screen lg:p-10 w-full">
       <main className=" shadow-md bg-black  text-white lg:rounded-lg w96 lg:py-3">
@@ -95,7 +97,7 @@ const UserSignup = () => {
             <input
               type="text"
               placeholder="Last Name"
-              onChange={handleChange}
+              onChange={handleNameChange}
               name="lastName"
               value={values.lastName}
               className="w-full outline-none text-black"
