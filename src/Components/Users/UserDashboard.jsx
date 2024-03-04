@@ -71,13 +71,32 @@ const UserDashboard = () => {
   
     return (
       <>
-       <section className="px-10 lg:text-gray-200 w-full h-screen  text-black">
-                <main className='w-full text-center lg:py-10 lg:px-5 mt-14 flex justify-between space-x-20'>
+       <section className="px-10 lg:text-white w-full h-screen  text-black">
+                <main className='w-full text-center lg:py-5 lg:px-2 mt-14 flex justify-between space-x-20'>
+                  <div className='w-full'>
+                      <p className='text-black mb-2'>Student ID</p>
                     <div className="rounded-md p-4 w-full bg-slate-900">
-                    <p> {matricNumber}</p> 
+                    <h4 className='text-2xl font-bold'> {matricNumber}</h4> 
                     </div>
-                    <div className="rounded-md p-4 w-full bg-slate-900">department</div>
-                    <div className="rounded-md p-4 w-full bg-slate-900">Level</div>
+                  </div>
+
+                  <div className='w-full'>
+                      <p className='text-black mb-2'>Department</p>
+                    <div className="rounded-md p-4 w-full bg-slate-900">
+                    <h4 className='text-2xl font-bold'>---</h4> 
+                    </div>
+                  </div>
+
+                  <div className='w-full'>
+                      <p className='text-black mb-2'>Level</p>
+                    <div className="rounded-md p-4 w-full bg-slate-900">
+                    <h4 className='text-2xl font-bold'>---</h4> 
+                    </div>
+                  </div>
+                </main>
+
+                <main className='w-full bg-slate-900 py-48 rounded-md'>
+
                 </main>
 
             </section>
