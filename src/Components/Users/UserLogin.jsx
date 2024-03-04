@@ -6,7 +6,7 @@ import { useState } from "react";
 import Alert from '@mui/material/Alert';
 import CheckIcon from '@mui/icons-material/Check';
 import { useDispatch } from 'react-redux';
-import { setMatricNumber } from "../../Redux/MatricSlice"; 
+import { setMatricNumber } from "../../Redux/MatricSlice";
 const UserLogin = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -14,6 +14,7 @@ const UserLogin = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [loggingIn, setLoggingIn] = useState(false);
     const [loginSuccess, setLoginSuccess] = useState(false);
+    const [loginError, setLoginError] = useState(null);
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -31,13 +32,21 @@ const UserLogin = () => {
                 .then((result) => {
                     if (result.data.status === true && result.data.token) {
                         localStorage.setItem("token", result.data.token);
+                        localStorage.setItem("firstName", result.data.user.firstName);
+                        localStorage.setItem("lastName", result.data.user.lastName);
                         setLoginSuccess(true);
                         setTimeout(() => {
                             navigate("/user/dashboard");
                         }, 3000);
                     } else {
-                        navigate("/user/login");
+                        console.error("error")
                     }
+                }).catch((err) => {
+                    console.error(err.response.data.message);
+                    setLoginError(err.response.data.message);
+                    setTimeout(() => {
+                        setLoginError(null);
+                    }, 2000);
                 })
                 .finally(() => {
                     setTimeout(() => {
@@ -48,8 +57,8 @@ const UserLogin = () => {
     });
 
     const handleMatricNumberChange = (e) => {
-        dispatch(setMatricNumber(e.target.value)); 
-        handleChange(e); 
+        dispatch(setMatricNumber(e.target.value));
+        handleChange(e);
     };
     return (
         <>
@@ -62,22 +71,28 @@ const UserLogin = () => {
                     <h1 className="text-center w-full font-bold text-xl text-white-300 lg:block hidden pb-3">Student Portal</h1>
                     <h1 className="text-center w-full mt-20 mb-10 font-bold text-2xl text-white lg:hidden">Student Portal</h1>
                     <div className="px-5">
-                    {loginSuccess && (
-                        <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
-                            Logged in successfully
-                        </Alert>
-                    )}
+                        {loginSuccess && (
+                            <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
+                                Logged in successfully
+                            </Alert>
+                        )}
+                         {loginError && (
+                            <Alert sx={{ width: "100%" }} severity="error">
+                                {loginError}
+                            </Alert>
+                        )}
                     </div>
                     <div className="px-5">
-                   {(errors.matricNumber || errors.password) && (
-                        <Alert sx={{width: "100%"}} severity="warning">
-                             {errors.matricNumber || errors.password}
-                        </Alert>
-                    )}
+                        {(errors.matricNumber || errors.password) && (
+                            <Alert sx={{ width: "100%" }} severity="warning">
+                                {errors.matricNumber || errors.password}
+                            </Alert>
+                        )}
+
                     </div>
                     <form onSubmit={handleSubmit} className="lg:p-5 p-5">
                         <div className="border flex items-center bg-white p-2 mb-3 rounded-md outline-1 outline-slate-400">
-                            <input type="text" placeholder='Matric Number' onChange={handleMatricNumberChange}  name="matricNumber" value={values.matricNumber} className="w-full bg-none outline-none text-black" />
+                            <input type="text" placeholder='Matric Number' onChange={handleMatricNumberChange} name="matricNumber" value={values.matricNumber} className="w-full bg-none outline-none text-black" />
                             <span className="material-symbols-outlined text-black">
                                 person
                             </span>

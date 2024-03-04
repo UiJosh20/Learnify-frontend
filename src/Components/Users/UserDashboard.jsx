@@ -9,10 +9,9 @@ const UserDashboard = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [tokenMatch, setTokenMatch] = useState(false);
+  const firstName = localStorage.getItem('firstName');
+  const lastName = localStorage.getItem('lastName');
   const matricNumber = useSelector(state => state.matric.matricNumber);
-  const name = useSelector(state => state.matric.name);
-  const firstname = name.firstName
-  const lastname = name.lastName
   const currentDate = new Date().toLocaleDateString('en-US', {
     month: 'long',
     day: 'numeric',
@@ -28,10 +27,11 @@ const UserDashboard = () => {
 
       axios.post('http://localhost:3000/user/verifyToken', { token })
         .then(response => {
-
+          console.log(response.data);
           if (token === response.data.token) {
             setLoading(false);
             setTokenMatch(true);
+            
           } else {
             console.log("Token doesn't match");
             navigate('/user/login');
@@ -89,7 +89,9 @@ const UserDashboard = () => {
             <small className='font-bold '> {matricNumber}</small>
             </p>
 
-            <h3 className='font-bold w-full py-5 text-2xl'>Welcome to Learnify, <strong className='text-yellow-500'>{firstname} {lastname}</strong></h3>
+            <h3 className='font-bold w-full py-5 text-2xl'>Welcome to Learnify, &nbsp;
+               <strong className='text-yellow-500'>{firstName} {lastName}</strong>
+            </h3>
           </div>
         </main>
 

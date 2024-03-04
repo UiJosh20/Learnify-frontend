@@ -16,6 +16,7 @@ import CreateNewPassword from "./Components/Users/CreateNewPassword"
 import AdminForgot from "./Components/Admin/AdminForgot"
 import AdminInputOTP from "./Components/Admin/AdminInputOTP"
 import AdminCreateNewPassword from "./Components/Admin/AdminCreateNewPassword"
+import UserProfile from "./Components/Users/UserProfile"
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
          <Route path="/user" element={<UserLayout/>}>
           <Route path="/user" element={<Navigate to="/user/dashboard" />} />
           <Route path="/user/dashboard" element={<UserDashboard  />} />
+          <Route path="/user/profile" element={<UserProfile  />} />
         </Route>
         
 

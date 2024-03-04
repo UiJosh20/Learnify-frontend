@@ -5,16 +5,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+
 
 
 
 const UserNav = () => {
 
     const navigate = useNavigate();
-    const name = useSelector(state => state.matric.name);
-  const firstname = name.firstName
-  const lastname = name.lastName
+
 
 
     const handleLogout = () => {
@@ -195,34 +193,6 @@ const UserNav = () => {
     )
 
 
-    function stringToColor(string) {
-        let hash = 0;
-        let i;
-      
-        /* eslint-disable no-bitwise */
-        for (i = 0; i < string.length; i += 1) {
-          hash = string.charCodeAt(i) + ((hash << 5) - hash);
-        }
-      
-        let color = '#';
-      
-        for (i = 0; i < 3; i += 1) {
-          const value = (hash >> (i * 8)) & 0xff;
-          color += `00${value.toString(16)}`.slice(-2);
-        }
-        /* eslint-enable no-bitwise */
-      
-        return color;
-      }
-
-    const stringAvatar = (name) => {
-        return {
-          sx: {
-            bgcolor: stringToColor(name),
-          },
-          children: `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`,
-        };
-      }
 
 
     return (
@@ -244,7 +214,7 @@ const UserNav = () => {
                             <path d="M15 19C15 20.6569 13.6569 22 12 22C10.3431 22 9 20.6569 9 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </Badge>
-                    <Avatar {...stringAvatar(`${firstname} ${lastname}`)} style={{width: 40, height: 40, border:"2px solid goldenrod"}} />
+                    <Avatar  />
                     </div>
                 </div>
                    
