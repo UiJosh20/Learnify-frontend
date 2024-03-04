@@ -8,12 +8,13 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 
+
 const UserNav = () => {
 
     const navigate = useNavigate();
     const name = useSelector(state => state.matric.name);
-    const firstname = name.firstName
-    const lastname = name.lastName
+  const firstname = name.firstName
+  const lastname = name.lastName
 
 
     const handleLogout = () => {
@@ -234,9 +235,7 @@ const UserNav = () => {
                         {DrawerList}
                     </Drawer>
                     </div>
-                    <div>
-                        <p>Welcome, {firstname} {lastname}</p>
-                    </div>
+                  
                     <div className='flex gap-10 items-center'>
                     <Badge color="primary" variant="dot">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" color="#000000" fill="none">
@@ -245,7 +244,7 @@ const UserNav = () => {
                             <path d="M15 19C15 20.6569 13.6569 22 12 22C10.3431 22 9 20.6569 9 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </Badge>
-                    <Avatar {...stringAvatar(`${firstname} ${lastname}`)} style={{width: 40, height: 40, border:"2px solid blue"}} />
+                    <Avatar {...stringAvatar(`${firstname} ${lastname}`)} style={{width: 40, height: 40, border:"2px solid goldenrod"}} />
                     </div>
                 </div>
                    
