@@ -5,9 +5,10 @@ import { userLoginSchema } from "../Schema/loginUser";
 import { useState } from "react";
 import Alert from '@mui/material/Alert';
 import CheckIcon from '@mui/icons-material/Check';
-
-
+import { useDispatch } from 'react-redux';
+import { setMatricNumber } from "../../Redux/MatricSlice"; 
 const UserLogin = () => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const URL = "http://localhost:3000/user/login";
     const [showPassword, setShowPassword] = useState(false);
@@ -46,6 +47,10 @@ const UserLogin = () => {
         }
     });
 
+    const handleMatricNumberChange = (e) => {
+        dispatch(setMatricNumber(e.target.value)); 
+        handleChange(e); 
+    };
     return (
         <>
             <section className="flex justify-center bg-gradient-to-r from-slate-800 to-slate-900 h-screen">
@@ -72,7 +77,7 @@ const UserLogin = () => {
                     </div>
                     <form onSubmit={handleSubmit} className="lg:p-5 p-5">
                         <div className="border flex items-center bg-white p-2 mb-3 rounded-md outline-1 outline-slate-400">
-                            <input type="text" placeholder='Matric Number' onChange={handleChange} name="matricNumber" value={values.matricNumber} className="w-full bg-none outline-none text-black" />
+                            <input type="text" placeholder='Matric Number' onChange={handleMatricNumberChange}  name="matricNumber" value={values.matricNumber} className="w-full bg-none outline-none text-black" />
                             <span className="material-symbols-outlined text-black">
                                 person
                             </span>

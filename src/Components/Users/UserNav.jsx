@@ -5,10 +5,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+
 
 const UserNav = () => {
 
     const navigate = useNavigate();
+    const name = useSelector(state => state.matric.name);
+    const username = name.firstName
+
+
     const handleLogout = () => {
         localStorage.removeItem('token');
         navigate('/')
@@ -212,7 +218,7 @@ const UserNav = () => {
           sx: {
             bgcolor: stringToColor(name),
           },
-          children: `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`,
+          children: `${name.split(' ')[0][0]}`,
         };
       }
 
@@ -235,7 +241,7 @@ const UserNav = () => {
                             <path d="M15 19C15 20.6569 13.6569 22 12 22C10.3431 22 9 20.6569 9 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </Badge>
-                    <Avatar {...stringAvatar('Peter Adebayo')} style={{width: 40, height: 40, border:"2px solid blue"}} />
+                    <Avatar {...stringAvatar(`${username}`)} style={{width: 40, height: 40, border:"2px solid blue"}} />
                     </div>
                 </div>
                    

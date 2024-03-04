@@ -4,6 +4,8 @@ import { useFormik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import { loginSchema } from "../Schema/userSchema";
 import Alert from '@mui/material/Alert';
+import { useDispatch } from 'react-redux'; 
+import { setName } from "../../Redux/MatricSlice";
 
 const initialValues = {
   firstName: "",
@@ -14,9 +16,16 @@ const initialValues = {
 
 const UserSignup = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const URL = "http://localhost:3000/user/register";
   const [showPassword, setShowPassword] = useState(false);
-  const [signingUp, setSigningUp] = useState(false); // State to track signup process
+  const [signingUp, setSigningUp] = useState(false); 
+  const initialValues = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  };
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -48,6 +57,13 @@ const UserSignup = () => {
     },
   });
 
+  const handleNameChange = (e) => {
+    const { name, value } = e.target;
+    const fullName = { ...values, [name]: value };
+    dispatch(setName(fullName));
+    handleChange(e); 
+};
+
   return (
     <section className="flex justify-center bg-gradient-to-r from-slate-800 to-slate-900  h-screen lg:p-10 w-full">
       <main className=" shadow-md bg-black  text-white lg:rounded-lg w96 lg:py-3">
@@ -65,7 +81,7 @@ const UserSignup = () => {
             <input
               type="text"
               placeholder="First Name"
-              onChange={handleChange}
+              onChange={handleNameChange}
               name="firstName"
               value={values.firstName}
               className="w-full outline-none text-black"
