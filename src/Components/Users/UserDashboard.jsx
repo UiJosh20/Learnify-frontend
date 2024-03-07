@@ -99,11 +99,9 @@ const UserDashboard = () => {
           <div className='bg-gray-200 p-4 w-96'>
             <h3 className='text-xl font-bold text-gray-700'>Upcoming Classes</h3>
             <div className='space-y-5'>
-              {/* {upcomingClasses.map((item, index) => (
-                <div key={index} className='bg-white p-4 rounded-md'>
-                  <h4 className='font-bold text-lg'>{item.title}</h4>
-                  <p>{item.description}</p>
-                   */}
+              <h3>Chemistry 102</h3>
+              <small>12:00 PM</small>
+              <p>This is an organic chemistry course</p>
             </div>
           </div>
           <div className='bg-gray-200 p-4 w-full'>
