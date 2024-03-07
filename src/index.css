@@ -39,7 +39,7 @@ small{
 }
 
 .nav-button.active {
-  border-bottom: 2px solid goldenrod;
+  border-left: 2px solid goldenrod;
 }
 
 
