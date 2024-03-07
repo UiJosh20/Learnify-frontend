@@ -102,16 +102,19 @@ const UserDashboard = () => {
       </main>
 
       <main className='flex space-x-10 py-10 lg:px-2'>
-        <div className='bg-gray-200 p-4 w-96'>
-          <h3 className='text-xl font-bold text-gray-700'>Upcoming Classes</h3>
-          <div className='space-y-5 '>
+        <div className='bg-gray-200 w-96'>
+          <div className='bg-slate-900 p-5'>
+          <h3 className='text-xl font-bold text-yellow-500'>Upcoming Classes</h3>
+          </div>
+          <div className='space-y-5 py-5'>
             {
               upcomingClasses.map((item, i) => (
-                <div key={i}>
-                  <p>{item.Course}</p>
+                <div key={i} className='text-gray-600 px-5'>
+                  <p className='text-slate-800'>{item.Course}</p>
                   <p>{item.Instructor}</p>
-                  <p>{item.Date}</p>
-                  <p>{item.Time}</p>
+                  <small>{item.Date}</small>
+                  &nbsp;&nbsp;
+                  <small>{item.Time}</small>
                   <p>{item.Location}</p>
                 </div>
               ))
