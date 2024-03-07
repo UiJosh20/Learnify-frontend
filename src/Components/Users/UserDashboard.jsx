@@ -57,7 +57,6 @@ const UserDashboard = () => {
     const fetchUpcomingClasses = () => {
       axios.get(ClassURL)
         .then((response) => {
-          console.log(response.data.upcomingClasses);
           setUpcomingClasses(response.data.upcomingClasses);
         })
         .catch((error) => {
@@ -102,11 +101,11 @@ const UserDashboard = () => {
       </main>
 
       <main className='flex space-x-10 py-10 lg:px-2'>
-        <div className='bg-gray-200 w-96'>
-          <div className='bg-slate-900 p-5'>
-          <h3 className='text-xl font-bold text-yellow-500'>Upcoming Classes</h3>
+        <div className='bg-gray-200 w-96 overflow-y-auto' style={{ maxHeight: '400px' }}>
+          <div className='bg-slate-900 p-4'>
+          <h3 className='text-xl font-bold text-yellow-500 '>Upcoming Classes</h3>
           </div>
-          <div className='space-y-5 py-5'>
+          <div className='space-y-5 py-7'>
             {
               upcomingClasses.map((item, i) => (
                 <div key={i} className='text-gray-600 px-5'>
