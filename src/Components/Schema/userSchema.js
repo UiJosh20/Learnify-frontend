@@ -1,4 +1,4 @@
-import * as yup from 'yup';
+import * as yup from 'yup'
 
 export const loginSchema = yup.object({
     firstName: yup.string().required('First name is required').max(10, 'Maximum length is 10 characters').min(4, 'First name must be between 4 and 10 characters'),

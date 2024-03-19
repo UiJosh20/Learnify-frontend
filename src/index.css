@@ -38,8 +38,21 @@ small{
   border-radius: 0% !important;
 }
 
+.nav-button1 {
+  font-size: 12px !important;
+  font-weight: bold !important;
+  color: white !important;
+  font-family: 'Rubik', sans-serif !important;
+  border-radius: 0% !important;
+}
+
 .nav-button.active {
   border-left: 2px solid goldenrod;
+}
+
+.nav-button1.active {
+  border-bottom: 2px solid goldenrod;
+  
 }
 
 

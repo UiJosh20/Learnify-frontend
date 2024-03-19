@@ -7,12 +7,7 @@ import Alert from '@mui/material/Alert';
 import { useDispatch } from 'react-redux'; 
 import { setName } from "../../Redux/MatricSlice";
 
-const initialValues = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  password: "",
-};
+
 
 const UserSignup = () => {
   const navigate = useNavigate();

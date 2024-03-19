@@ -27,7 +27,7 @@ const Navbar = () => {
         <div className="lg:gap-5 lg:me-10 lg:flex hidden">
           <Button
             id="home-button"
-            className={`nav-button ${location.pathname === '/home' ? 'active' : ''}`}
+            className={`nav-button1 ${location.pathname === '/home' ? 'active' : ''}`}
             component={Link}
             to="/home"
           >
@@ -69,7 +69,7 @@ const Navbar = () => {
           </Menu>
           <Button
             id="about-button"
-            className={`nav-button ${location.pathname === '/about' ? 'active' : ''}`}
+            className={`nav-button1 ${location.pathname === '/about' ? 'active' : ''}`}
             component={Link}
             to="/about"
           >
@@ -77,7 +77,7 @@ const Navbar = () => {
           </Button>
           <Button
             id="news-button"
-            className={`nav-button ${location.pathname === '/news' ? 'active' : ''}`}
+            className={`nav-button1 ${location.pathname === '/news' ? 'active' : ''}`}
             component={Link}
             to="/news"
           >

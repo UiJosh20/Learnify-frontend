@@ -17,6 +17,8 @@ import AdminForgot from "./Components/Admin/AdminForgot"
 import AdminInputOTP from "./Components/Admin/AdminInputOTP"
 import AdminCreateNewPassword from "./Components/Admin/AdminCreateNewPassword"
 import UserProfile from "./Components/Users/UserProfile"
+import News from "./Components/Layout/News"
+import About from "./Components/Layout/About"
 
 
 function App() {
@@ -31,6 +33,9 @@ function App() {
         <Route path="/" element={<Layout/>}>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home/>} />
+          <Route path="/news" element={<News/>} />
+          <Route path="/about" element={<About/>} />
+       
         </Route>
 
         
